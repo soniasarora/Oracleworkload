@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Workload Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('hidden');
+    }
+  }
+</script>
+</head>
+<body class="flex h-screen overflow-hidden bg-white text-black">
+  <!-- Sidebar -->
+  <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
+
+    <!-- Main Menu Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">dashboard</span> Dashboard
+      </a>
+    </div>
+
+    <!-- Roles Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Roles</div>
+            <div class="space-y-1">
+        <button onclick="toggleDropdown('hubResourcesDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">menu_book</span> Hub Administrator
+        </button>
+        <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Hub Resources</a>
+          
+          <div class="space-y-1">
+        <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Hub Validation
+        </button>
+        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendation</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendation</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+        </div>
+      </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into AI services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into Azure Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security and Compliance</a>
+
+        </div>
+      </div>
+  
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Infra Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> DBA Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Application Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Backup Admin
+      </a>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="mt-4">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Resources</div>
+
+      <!-- Related Services Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('relatedDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">link</span> Related Services
+        </button>
+        <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service A</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service B</a>
+        </div>
+      </div>
+
+      <!-- Help Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">help</span> Help
+        </button>
+        <div id="helpDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Support + Trouble shooting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Section -->
+    <div class="mt-auto p-2 border-t border-blue-900">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">System</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">settings</span> Settings
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">logout</span> Log Out
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between">
+    <!-- Center Content -->
+    <div class="flex flex-col items-center justify-center flex-grow text-center">
+      <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
+      <h1 class="text-4xl font-bold mb-2">Welcome to OracleHub on Azure!</h1>
+      <p class="text-gray-600 text-lg">Select a role from the sidebar or type a prompt below to get started.</p>
+    </div>
+
+    <!-- Suggested Cards -->
+    <div class="p-4 border-t border-blue-200 bg-blue-50">
+      <div class="text-sm font-semibold mb-3 text-[#0078d4]">Try these quick actions:</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="https://tremiore.github.io/hub/" class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Build an Oracle Hub</div>
+        </a>
+        <div class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Modify Oracle Hub</div>
+        </div>
+        <div class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Enroll into services for Hub Validation</div>
+        </div>
+        <div class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Delete Oracle Hub</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3">
+      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6 w-9" />
+      <input type="text" placeholder="Ask Workload Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
+      <button class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+        <span class="material-icons mr-2">send</span> Send
+      </button>
+    </div>
+  </div>
+</body>
+</html>
