@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Workload Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    element.classList.toggle('hidden');
+  }
+</script>
+</head>
+<body class="flex h-screen overflow-hidden bg-white text-black">
+  <!-- Sidebar -->
+  <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
+
+    <!-- Main Menu Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">dashboard</span> Dashboard
+      </a>
+    </div>
+
+    <!-- Roles Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Roles</div>
+            <div class="space-y-1">
+        <button onclick="toggleDropdown('hubResourcesDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">menu_book</span> Hub Administrator
+        </button>
+        <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Hub Resources</a>
+          
+          <div class="space-y-1">
+        <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Hub Validation
+        </button>
+        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendation</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendation</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+        </div>
+      </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into AI services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into Azure Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security and Compliance</a>
+
+        </div>
+      </div>
+  
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Infra Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> DBA Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Application Admin
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">group</span> Backup Admin
+      </a>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="mt-4">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Resources</div>
+
+      <!-- Related Services Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('relatedDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">link</span> Related Services
+        </button>
+        <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service A</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service B</a>
+        </div>
+      </div>
+
+      <!-- Help Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">help</span> Help
+        </button>
+        <div id="helpDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Support + Trouble shooting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Section -->
+    <div class="mt-auto p-2 border-t border-blue-900">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">System</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">settings</span> Settings
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">logout</span> Log Out
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between min-h-0">
+    <!-- Chat Window Content -->
+    <div id="chatWindow" class="flex flex-col flex-grow overflow-y-auto p-6 space-y-4 min-h-0 pb-32">
+
+      <!-- Simulated Chat -->
+      <div class="bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2">
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div>Hello! How can I assist you with your Oracle hub?</div>
+        </div>
+      </div>
+
+      
+
+
+
+
+
+
+
+
+      
+
+    <!-- <!-- Input Area --
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
+      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
+      <input id="userInput" type="text" placeholder="Ask Workload Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
+<button id="sendButton" onclick="handleSend()" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+  <span class="material-icons mr-2">send</span> Send
+</button>
+
+    </div>
+  </div>
+ -->
+
+
+
+
+<div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
+  <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
+  <input id="userInput" type="text" placeholder="Ask Workload Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
+  <button id="sendButton" onclick="handleConditionalEvent(); handleSend(); " class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+    <span class="material-icons mr-2">send</span> Send
+  </button>
+</div>
+
+<script>
+function handleConditionalEvent() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim().toLowerCase();
+
+  if (message === "oracle ebs hub") {
+    setTimeout(() => {
+      const chatWindow = document.getElementById("chatWindow");
+
+      // Removed duplicate user bubble for 'Oracle EBS Hub'
+
+      const mappingBubble = document.createElement("div");
+      mappingBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+      mappingBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div>Mapping <strong>117</strong> Azure Resources to <strong>'Oracle EBS Hub'</strong>...</div>
+        </div>`;
+      chatWindow.appendChild(mappingBubble);
+
+      const confirmationBubble = document.createElement("div");
+      confirmationBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+      confirmationBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div>Registration now successfully completed. Oracle EBS Hub is ready for workload validation</div>
+        </div>`;
+      chatWindow.appendChild(confirmationBubble);
+
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 500);
+    document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("userInput");
+    const sendButton = document.getElementById("sendButton");
+    if (input) input.disabled = true;
+    if (sendButton) sendButton.disabled = true;
+  });
+  }
+}
+  
+
+</script>
+
+
+
+    
+
+
+  
+  <script>
+  function handleSend() {
+    const input = document.getElementById("userInput");
+    const message = input.value.trim();
+    if (message === "") return;
+
+    const chatWindow = document.getElementById("chatWindow");
+
+    // User bubble
+    const userBubble = document.createElement("div");
+    userBubble.className = "bg-[#0078d4] text-white max-w-md px-4 py-3 rounded-lg self-end";
+    userBubble.textContent = message;
+    chatWindow.appendChild(userBubble);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    input.value = "";
+
+    // Don't proceed with Copilot responses if message is "oracle ebs hub"
+    if (message.toLowerCase() === "oracle ebs hub") return;
+
+    // Step 1: Copilot response
+    setTimeout(() => {
+      const copilotBubble1 = document.createElement("div");
+      copilotBubble1.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble1.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div>Sure, let's go over more questions to understand your use case better.</div>
+        </div>`;
+      chatWindow.appendChild(copilotBubble1);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+
+      // Step 2: Copilot follow-up with radio options
+      setTimeout(() => {
+        const copilotForm = document.createElement("div");
+        copilotForm.className = "bg-blue-100 text-black max-w-md px-4 py-4 rounded-lg self-start flex items-start space-x-2";
+        copilotForm.innerHTML = `
+  <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+  <div>
+    <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+    <div class="mb-2">How would you like to discover the Azure resources?</div>
+    <form id="discoveryForm" class="space-y-2">
+      <label class="flex items-center space-x-2">
+        <input type="radio" name="discovery" value="Upload an excel sheet" class="form-radio text-[#0078d4]" />
+        <span>Upload an excel sheet</span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <input type="radio" name="discovery" value="Auto discover Azure resources" class="form-radio text-[#0078d4]" />
+        <span>Auto discover Azure resources via your tenant id</span>
+      </label>
+      <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage(event)">Submit</button>
+    </form>
+  </div>`;
+        chatWindow.appendChild(copilotForm);
+chatWindow.scrollTop = chatWindow.scrollHeight;
+
+// Attach submit handler AFTER element is added to DOM
+const discoveryForm = document.getElementById("discoveryForm");
+if (discoveryForm) {
+  discoveryForm.onsubmit = handleRadioSubmit;
+}
+
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }, 800); // Delay between text and form
+    }, 1000);
+  }
+    
+</script>
+
+<script>
+  function handleRadioSubmit(event) {
+  event.preventDefault(); // Prevent form reload
+
+  const form = event.target;
+  const selectedOption = form.querySelector('input[name="discovery"]:checked');
+  if (!selectedOption) return;
+
+  const chatWindow = document.getElementById("chatWindow");
+
+  // Add "Thank you" as user bubble instead of selected option
+  // const userBubble = document.createElement("div");
+  // userBubble.className = "bg-[#0078d4] text-white max-w-md px-4 py-3 rounded-lg self-end";
+  // userBubble.textContent = "Auto discover Azure resources via your tenant id";
+  // chatWindow.appendChild(userBubble);
+  // chatWindow.scrollTop = chatWindow.scrollHeight;
+
+  // Remove the form after submission
+  form.closest(".bg-blue-100").remove();
+
+  // Copilot follow-up message
+  setTimeout(() => {
+    const followup = document.createElement("div");
+    followup.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+    followup.innerHTML = `
+      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+      <div>
+        <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+        <div><span class='text-[#0078d4] font-semibold'>cacf72a7-6dab-4eb7-891b-effb028de1a3 </span> is your tenant id.
+          <div><em class="text-gray">(You need to have admin privileges on the subscriptions in this tenant to create a hub)</em></div>
+          <div>Press submit to proceed.</div>
+          <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage(event)">Submit</button>
+        </div>
+      </div>`;
+    chatWindow.appendChild(followup);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }, 800);
+}
+
+</script>
+
+
+<script>
+  window.onload = function () {
+    const staticForm = document.getElementById("discoveryForm");
+    if (staticForm) {
+      staticForm.onsubmit = handleRadioSubmit;
+    }
+  };
+
+  function triggerNewMessage(event) {
+    event.preventDefault();
+    const chatWindow = document.getElementById("chatWindow");
+    // Removed user response display for Auto discover Azure resources
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    setTimeout(() => {
+      const copilotBubble = document.createElement("div");
+      copilotBubble.className = "bg-blue-100 text-black px-4 py-5 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div><span class='text-[#0078d4] font-semibold'>cacf72a7-6dab-4eb7-891b-effb028de1a3 </span> is your tenant id.
+            <div><em class="text-gray">(Before you proceed, You need to have admin privileges on the subscriptions on this tenant)</em></div>
+            <div>Press submit to proceed.</div>
+          <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage1(event)">Submit</button></div>
+        </div>`;
+      chatWindow.appendChild(copilotBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 700);
+  }
+</script>
+
+
+
+  <!-- -------- -->
+  <script>
+  window.onload = function () {
+    const staticForm = document.getElementById("discoveryForm");
+    if (staticForm) {
+      staticForm.onsubmit = handleRadioSubmit;
+    }
+  };
+
+  function triggerNewMessage1(event) {
+    event.preventDefault();
+    const chatWindow = document.getElementById("chatWindow");
+    // Removed user response display for Auto discover Azure resources
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    setTimeout(() => {
+      const copilotBubble = document.createElement("div");
+      copilotBubble.className = "bg-blue-100 text-black px-4 py-5 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble.innerHTML = `
+       
+          <div class="bg-blue-100 text-black max-w-md px-4 py-4 rounded-lg self-start flex items-start space-x-2">
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div class="mb-2">Select the subscriptions of the resources you want to group</div>
+          <form class="space-y-2">
+            <div>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="discovery" class="form-radio text-[#0078d4]" />
+                <span>ef2c2154-2d60-433c-a2d8-b947e184c3a7</span>
+              </label>
+            </div>
+            <div>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="discovery" class="form-radio text-[#0078d4]" />
+                <span>b45t2154-2r60-663c-a2d8-c549f6884c3a7</span>
+              </label>
+            </div>
+            <div>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="discovery" class="form-radio text-[#0078d4]" />
+                <span>fg23h1236-7rto-ddg76-t1y5-f0077e6984f838</span>
+              </label>
+            </div>
+            <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage2(event)">Submit</button>
+          </form>
+        <div>
+        </div>
+      </div>
+      
+        </div>`;
+      chatWindow.appendChild(copilotBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 700);
+  }
+</script>
+
+
+
+<!-- /-------------------------- -->
+  <script>
+  window.onload = function () {
+    const staticForm = document.getElementById("discoveryForm");
+    if (staticForm) {
+      staticForm.onsubmit = handleRadioSubmit;
+    }
+  };
+
+  function triggerNewMessage2(event) {
+    event.preventDefault();
+    const chatWindow = document.getElementById("chatWindow");
+    // Removed user response display for Auto discover Azure resources
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    setTimeout(() => {
+      const copilotBubble = document.createElement("div");
+      copilotBubble.className = "bg-blue-100 text-black px-4 py-5 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div>You selected the following:
+          <br><span class='text-[#0078d4] font-semibold'>ef2c2154-2d60-433c-a2d8-b947e184c3a7
+          <br>b45t2154-2r60-663c-a2d8-c549f6884c3a7</br></span></br>
+            <br>Would you like to proceed?
+            <br><button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage3(event)">Yes</button>
+          <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]">No</button></br>
+          </div>
+        </div>`;
+      chatWindow.appendChild(copilotBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 700);
+  }
+</script>
+</body>
+</html>
+
+
+<!-- 
+----------------------------------
+ -->
+  <script>
+  window.onload = function () {
+    const staticForm = document.getElementById("discoveryForm");
+    if (staticForm) {
+      staticForm.onsubmit = handleRadioSubmit;
+    }
+  };
+
+  function triggerNewMessage3(event) {
+    event.preventDefault();
+    const chatWindow = document.getElementById("chatWindow");
+    // Removed user response display for Auto discover Azure resources
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    setTimeout(() => {
+      const copilotBubble = document.createElement("div");
+      copilotBubble.className = "bg-blue-100 text-black px-4 py-5 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+          <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+          <div class="mb-2">    Select the Azure resources below that should be mapped to this hub. You can ask to show more.
+<div class="overflow-x-auto mt-4">
+  <table class="min-w-full text-sm text-left text-black border border-white-200 whitespace-nowrap bg-gray-100">
+    <thead class="bg-gray-200">
+  <tr>
+    <th class="px-4 py-2"></th>
+    <th class="px-4 py-2">Name</th>
+    <th class="px-4 py-2">Type</th>
+    <th class="px-4 py-2">Subscription</th>
+  </tr>
+</thead>
+    <tbody class="bg-gray-100">
+      <tr class="border-t">
+  <td class="px-4 py-2"><input type="checkbox" /></td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">cluster-1-key</td>
+  <td class="px-4 py-2">SSH key</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+      <tr class="border-t">
+        <td class="px-4 py-2"><input type="checkbox" /></td>
+        <td class="px-4 py-2 text-[#0078d4] cursor-pointer">cluster_ssh</td>
+        <td class="px-4 py-2">SSH key</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+      <tr class="border-t">
+        <td class="px-4 py-2"><input type="checkbox" /></td>
+        <td class="px-4 py-2 text-[#0078d4] cursor-pointer">CPU Utilization over 90 Percent</td>
+        <td class="px-4 py-2">Metric alert rule</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+      <tr class="border-t">
+        <td class="px-4 py-2"><input type="checkbox" /></td>
+        <td class="px-4 py-2 text-[#0078d4] cursor-pointer">def-inf</td>
+        <td class="px-4 py-2">Oracle Exadata Infrastructure</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+</tr>
+
+      <tr class="border-t">
+        <td class="px-4 py-2"><input type="checkbox" /></td>
+        <td class="px-4 py-2 text-[#0078d4] cursor-pointer">def-vmc</td>
+        <td class="px-4 py-2">Oracle Exadata VM Cluster</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+    <tr class="border-t">
+  <td class="px-4 py-2"><input type="checkbox" /></td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">appVMnsg574</td>
+  <td class="px-4 py-2">Network Security Group</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+<tr class="border-t">
+  <td class="px-4 py-2"><input type="checkbox" /></td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Appl Tier 1</td>
+  <td class="px-4 py-2">App Web Tier</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftEBS1</td>
+</tr>
+<tr class="border-t">
+  <td class="px-4 py-2"><input type="checkbox" /></td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">aue-fw-pol</td>
+  <td class="px-4 py-2">Firewall Policy</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+<tr class="border-t">
+  <td class="px-4 py-2"><input type="checkbox" /></td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">AppRT</td>
+  <td class="px-4 py-2">Route Table</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
+</tr>
+    
+  </table>
+</div>
+        
+            </div>
+            <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage4(event)">Submit</button>
+          </form>
+
+        </div>`;
+      chatWindow.appendChild(copilotBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 700);
+  }
+</script>
+
+
+
+<!-- #---------------------------- -->
+<script>
+  window.onload = function () {
+    const staticForm = document.getElementById("discoveryForm");
+    if (staticForm) {
+      staticForm.onsubmit = handleRadioSubmit;
+    }
+  };
+
+  function triggerNewMessage4(event) {
+    event.preventDefault();
+    const chatWindow = document.getElementById("chatWindow");
+    // Removed user response display for Auto discover Azure resources
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    setTimeout(() => {
+      const copilotBubble = document.createElement("div");
+      copilotBubble.className = "bg-blue-100 text-black px-4 py-5 rounded-lg self-start flex items-start space-x-2";
+      copilotBubble.innerHTML = `
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
+        <div>
+    <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+    <div class="whitespace-nowrap overflow-hidden text-ellipsis">Provide a name for your hub</div>
+          </div>
+          
+        </div>`;
+      
+      chatWindow.appendChild(copilotBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }, 700);
+  }
+</script>
