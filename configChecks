@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oracle Workload Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('hidden');
+    }
+  }
+</script>
+</head>
+<body class="flex h-screen overflow-hidden bg-white text-black">
+  <!-- Sidebar -->
+  <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
+
+    <!-- Main Menu Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">dashboard</span> Dashboard
+      </a>
+    </div>
+
+    <!-- Roles Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Roles</div>
+            <div class="space-y-1">
+        <button onclick="toggleDropdown('hubResourcesDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">menu_book</span> Workload Administrator
+        </button>
+        <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
+          <div class="space-y-1">
+        <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Configuration
+        </button>
+            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Applications
+        </button>
+        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
+        </div>
+      </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
+          <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Validation
+        </button>
+        <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
+        </div>
+          <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Management
+        </button>
+          <div id="hubValidationDropdown4" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Monitor</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Backup</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Cost Analysis</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
+        </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
+        </div>  
+      </div>
+      </div>
+
+       
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">build</span> Infra Administator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">storage</span> DBA Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">code</span> Application Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">backup</span> Backup Administrator
+      </a>
+
+
+    <!-- Resources Section -->
+    <div class="mt-4">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Resources</div>
+
+      <!-- Related Services Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('relatedDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">link</span> Related Services
+        </button>
+        <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Resources</a>
+        </div>
+      </div>
+      <!-- Help Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">help</span> Help
+        </button>
+        <div id="helpDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Support + Trouble shooting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Section -->
+    <div class="mt-auto p-2 border-t border-blue-900">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">System</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">settings</span> Settings
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">logout</span> Log Out
+      </a>
+    </div>
+    </div>
+
+
+ <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between">
+    <!-- Chat Window Content -->
+    <div class="flex flex-col flex-grow overflow-y-auto p-6 space-y-4">
+      <!-- Simulated Chat -->
+      <div class="bg-white shadow-[0_20px_40px_rgba(0,0,0,0.35)] text-black w-full max-w-[60%] px-4 py-4 rounded-lg self-center flex items-start space-x-2 mt-80">
+          <div class="mb-2">
+            <strong>Based on your configuration checks, the following need attention!</strong>
+            <div class="overflow-x-auto mt-2 flex justify-center items-center">
+              <table class="min-w-fit text-sm text-left text-black border border-blue-200 whitespace-nowrap space-x-2 bg-white">
+                <thead class="bg-blue-100">
+                  <tr>
+                    <th class="px-4 py-2">Drift Type</th>
+                    <th class="px-4 py-2">Systems Affected</th>
+                    <th class="px-4 py-2">Impact Severity</th>
+                    <th class="px-4 py-2">Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white">
+                  <tr class="border border-blue-200">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Write Accelerator not enabled on HANA data disk</td>
+                    <td class="px-4 py-2">PE1, SE1</td>
+                    <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
+                    <td class="px-4 py-2"><button class="bg-[#0078d4] text-white px-3 py-1 rounded hover:bg-[#005a9e] text-sm">Take Action</button></td>
+                  </tr>
+                  <tr class="border border-blue-200">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Accelerated Networking disabled on NICs</td>
+                    <td class="px-4 py-2">PE1, SE1, EP1</td>
+                    <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
+                    <td class="px-4 py-2"><button class="bg-[#0078d4] text-white px-3 py-1 rounded hover:bg-[#005a9e] text-sm">Take Action</button></td>
+                  </tr>
+                  <tr class="border border-blue-200">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Missing NSG rule: Allow SAPRouter (TCP 3299)</td>
+                    <td class="px-4 py-2">EP1</td>
+                    <td class="px-4 py-2 text-[#FFD60A] cursor-pointer">Medium</td>
+                    <td class="px-4 py-2"><button class="bg-[#0078d4] text-white px-3 py-1 rounded hover:bg-[#005a9e] text-sm">Take Action</button></td>
+                  </tr>
+                  <tr class="border border-blue-200">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Incorrect disk caching (ReadWrite on OS disk)</td>
+                    <td class="px-4 py-2">SE1</td>
+                    <td class="px-4 py-2 text-[#FFD60A] cursor-pointer">Medium</td>
+                    <td class="px-4 py-2"><button class="bg-[#0078d4] text-white px-3 py-1 rounded hover:bg-[#005a9e] text-sm">Take Action</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10 w-full max-w-[calc(100%-16rem)] overflow-x-auto">
+      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6 w-9" style="width: 2.25rem;" />
+      <input type="text" placeholder="Ask Workload Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
+      <button class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+        <span class="material-icons mr-2">send</span> Send
+      </button>
+    </div>
+</body>
+</html>
