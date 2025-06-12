@@ -38,42 +38,45 @@
         </button>
         <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
-        <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
-          Workload Resources
+        <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Configuration
+        </button>
+            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Applications
         </button>
         <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Applications</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
+        </div>
+      </div>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
-        </div>
-      </div>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into AI services</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Integration into Azure services</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Compliance</a>
-        </div>
-      </div>
-
-        <button onclick="toggleDropdown('hubResourcesDropdown1')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-          <span class="material-icons mr-3">shield</span> Workload Capabilities
-        </button>
-        <div id="hubResourcesDropdown1" class="ml-8 space-y-1 hidden">
-          <div class="space-y-1">
-        <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
+          <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Validation
         </button>
         <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+          <a href="https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=fd00f37d-15b2-4298-8f36-d14e5ba5d852&environment=e8c15152-6398-e1b4-adce-1c0317894003" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
         </div>
-      </div>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service Group Creation</a>
+          <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Management
+        </button>
+          <div id="hubValidationDropdown4" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Monitor</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Backup</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Cost Analysis</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
         </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
+        </div>  
       </div>
-      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">supervisor_account</span> Workload Setup
-      </a> 
+      </div>
+
+       
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
         <span class="material-icons mr-3">build</span> Infra Administator
       </a>
@@ -86,6 +89,7 @@
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
         <span class="material-icons mr-3">backup</span> Backup Administrator
       </a>
+
 
 
     <!-- Resources Section -->
