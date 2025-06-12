@@ -16,6 +16,7 @@
 </script>
 </head>
 <body class="flex h-screen overflow-hidden bg-white text-black">
+
   <!-- Sidebar -->
   <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
     <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
@@ -52,7 +53,7 @@
       </div>
 
         <button onclick="toggleDropdown('hubResourcesDropdown1')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-          <span class="material-icons mr-3">menu_book</span> Workload Capabilities
+          <span class="material-icons mr-3">shield</span> Workload Capabilities
         </button>
         <div id="hubResourcesDropdown1" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
@@ -71,19 +72,19 @@
         </div>
       </div>
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">group</span> Workload Setup
+        <span class="material-icons mr-3">supervisor_account</span> Workload Setup
       </a> 
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">group</span> Infra Administator
+        <span class="material-icons mr-3">build</span> Infra Administator
       </a>
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">group</span> DBA Administrator
+        <span class="material-icons mr-3">storage</span> DBA Administrator
       </a>
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">group</span> Application Administrator
+        <span class="material-icons mr-3">code</span> Application Administrator
       </a>
       <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
-        <span class="material-icons mr-3">group</span> Backup Administrator
+        <span class="material-icons mr-3">backup</span> Backup Administrator
       </a>
 
 
@@ -97,11 +98,11 @@
           <span class="material-icons mr-3">link</span> Related Services
         </button>
         <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service A</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Service B</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Resources</a>
         </div>
       </div>
-       <!-- Help Dropdown -->
+      <!-- Help Dropdown -->
       <div class="space-y-1">
         <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
           <span class="material-icons mr-3">help</span> Help
@@ -123,6 +124,7 @@
       </a>
     </div>
     </div>
+
 
   <!-- Main Content -->
   <div class="flex-1 flex flex-col bg-white justify-between">
