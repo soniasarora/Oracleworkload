@@ -14,6 +14,48 @@
     }
   }
 </script>
+  <style>
+  .card-flip {
+    perspective: 1000px;
+  }
+  .card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .card-flip:hover .card-inner {
+    transform: rotateX(180deg);
+  }
+  .card-front, .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #0078d4;
+  }
+  .card-front {
+    background-color: white;
+    color: black;
+    z-index: 2;
+  }
+  .card-back {
+    background-color: #0078d4;
+    color: white;
+    transform: rotateX(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+  }
+</style>
 </head>
 <body class="flex h-screen overflow-hidden bg-white text-black">
   <!-- Sidebar -->
@@ -40,23 +82,24 @@
         <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Configuration
         </button>
-            <!-- <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Applications
         </button>
         <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
-        </div> -->
+        </div>
       </div>
-          <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
           <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Validation
         </button>
         <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+          <a href="" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
         </div>
           <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Management
@@ -124,49 +167,74 @@
         <span class="material-icons mr-3">logout</span> Log Out
       </a>
     </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between">
+    <!-- Center Content -->
+    <div class="flex flex-col items-center justify-center flex-grow text-center">
+      <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
+      <h1 class="text-4xl font-bold mb-2">Welcome to OracleHub on Azure!</h1>
+      <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
     </div>
 
+    <!-- Suggested Cards -->
+    <div class="p-6 pt-2 flex-grow flex flex-col justify-start">
+    <div class="text-sm font-semibold mb-3 text-[#0078d4] text-left max-w-4xl mx-auto w-full">Interact with action cards to learn more:</div>
+      <div class="flex flex-col gap-3 items-center">
 
-<!-- Main Content -->
-  <div class="flex-1 flex flex-col bg-white justify-between">
-    <!-- Chat Window Content -->
-    <div class="flex flex-col flex-grow overflow-y-auto p-6 space-y-4">
-      <!-- Simulated Chat -->
-      <div class="bg-white shadow-[0_25px_50px_rgba(0,0,0,0.45)] text-black w-[95%] max-w-[95%] px-32 py-40 rounded-lg mx-auto my-auto text-2xl flex items-center justify-center h-fit">
-          <div class="mb-2">
-            <strong class="block mb-2 mt-[-4rem]">Based on the best practices of Well Architected Framework, here are the recommendations!</strong>
-            
-            <div class="overflow-x-auto mt-4 w-full h-full">
-              <table class="w-full h-full table-auto text-2xl">
-                <thead class="bg-blue-100">
-                  <tr>
-                    <th class="px-4 py-2 w-[60%] text-left">Drift Type</th>
-                    <th class="px-4 py-2 text-left">Impact Severity</th>
-                    <th class="px-4 py-2 text-left">Recommendation</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white space-y-6">
-                  <tr class="border border-blue-200 align-top">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Advanced Networking Features are disabled for <br>Sub Id adb6c79a-ae57-4414-a97e-f9d68f5fa3e8</td>
-                    <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl" target="_blank" class="inline-block bg-[#0078d4] text-white px-4 py-2 mt-2 rounded hover:bg-[#005a9e] transition-colors">Take Action</a></td>
-                  </tr>
-                  <tr class="border border-blue-200 align-top">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Accelerated Networking disabled for <br>Sub Id adb6c79a-ae57-4414-a97e-f9d68f5fa3e6</td>
-                    <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl" target="_blank" class="inline-block bg-[#0078d4] text-white px-4 py-2 mt-2 rounded hover:bg-[#005a9e] transition-colors">Take Action</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="mt-32"></div>
-            <p class="text-xl mt-12 text-gray-400 italic">Please review and prioritize accordingly.</p>
-          </div>
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+      <div class="card-inner">
+        <div class="card-front flex flex-col justify-center">
+          <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Workload Administrator</div>
+          <div class="text-base text-center">Build | Enroll | Delete an Oracle Hub</div>
+        </div>
+        <div class="card-back">
+          Launch Oracle Workload Hub setup 
         </div>
       </div>
+    </a>
+        
+    <a href="configChecks.html" class="card-flip w-full max-w-4xl h-24 block">
+      <div class="card-inner">
+        <div class="card-front flex flex-col justify-center">
+          <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Workload Administrator</div>
+          <div class="text-base text-center">Configuration Checks</div>
+        </div>
+        <div class="card-back">
+            Your Subscription adb6c79a-ae57-4414-a97e-f9d68f5fa3e8 does not have advanced networking features enabled. Turning on will enhance your virtual networking experience by providing better security, performance, and control. Click to start the enabling process.
+        </div>
+      </div>
+    </a>
+        
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+          <div class="card-inner">
+            <div class="card-front flex flex-col justify-center">
+              <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Infrastructure Administrator</div>
+              <div class="text-base text-center">Health Checks</div>
+            </div>
+            <div class="card-back">
+              You have a long running process in your application tier Appl Tier1. This is consuming memory >50%.
+            </div>
+          </div>
+    </a>
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+          <div class="card-inner">
+            <div class="card-front flex flex-col justify-center">
+              <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Infrastructure Administrator</div>
+              <div class="text-base text-center">BackUp Management</div>
+            </div>
+            <div class="card-back">
+              The weekly backup of the exadata cluster def-vmc has failed due to insufficient storage space on {insert storage name}
+            </div>
+          </div>
+    </a>
+        
+
+      </div>
     </div>
-  
+
+    <!-- Input Area -->
     <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
   <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
   <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow"
@@ -174,6 +242,6 @@
   <button id="sendButton" onclick="handleConditionalEvent(); handleSend();" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
     <span class="material-icons mr-2">send</span> Send
   </button>
-</div>
+    </div>
 </body>
 </html>
