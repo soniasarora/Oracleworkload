@@ -159,7 +159,7 @@ function handleConditionalEvent() {
     setTimeout(() => {
       const chatWindow = document.getElementById("chatWindow");
 
-      // Removed duplicate user bubble for 'Oracle EBS Hub'
+      // Removed duplicate user bubble for 'Oracle EBS'
 
       const mappingBubble = document.createElement("div");
       mappingBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
@@ -217,7 +217,7 @@ function handleConditionalEvent() {
     input.value = "";
 
     // Don't proceed with Copilot responses if message is "oracle ebs hub"
-    if (message.toLowerCase() === "oracle ebs hub") return;
+    if (message.toLowerCase() === "oracle ebs") return;
 
     // Step 1: Copilot response
     setTimeout(() => {
