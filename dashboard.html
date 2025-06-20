@@ -38,16 +38,11 @@
         </button>
         <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
-        <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+        <!-- <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Configuration
-        </button>
-            <!-- <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
-          Workload Applications
-        </button>
-        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
-        </div> -->
+        </button> -->
+        <a href="index.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+
       </div>
           <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
@@ -132,9 +127,12 @@
   <div class="flex-1 flex flex-col bg-white justify-between">
     <!-- Center Content -->
     <div class="flex flex-col items-center justify-center flex-grow text-center">
-      <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
-      <h1 class="text-4xl font-bold mb-2">Welcome to OracleHub on Azure!</h1>
-      <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
+      
+      <div class="mt-28">
+        <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
+        <h1 class="text-4xl font-bold mb-2">Welcome to OracleHub on Azure!</h1>
+        <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
+      </div>
     </div>
 
     <!-- Input Area -->
@@ -142,8 +140,8 @@
     <!-- Decorative Glow -->
     <div class="absolute -left-8 -top-8 w-24 h-24 bg-[#0078d4]/10 rounded-full blur-2xl pointer-events-none"></div>
     <!-- Copilot Logo -->
-    <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg h-16 w-16 border-4 border-[#0078d4]">
-        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-10 w-14 object-contain" />
+    <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg h-10 w-10 border-4 border-[#0078d4]">
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-8 w-12 object-contain" />
     </div>
     <!-- Input -->
     <input
@@ -167,9 +165,9 @@
       <a href="index2.html" class="max-w-xs w-64 h-24 flex items-center justify-center bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb] flex-col items-start" >
         <div class="flex flex-col w-full -mt-4">
           <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-[-8px] ml-0 self-start">
-            Best Practices
+            Management
           </span>
-          <div class="text-sm text-gray-600 font-medium w-full mt-1">
+          <div class="text-md text-gray-600 font-medium w-full mt-1">
             Help me with Hub operations
           </div>
         </div>
@@ -179,7 +177,7 @@
           <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-[-8px] ml-0 self-start">
             Best Practices
           </span>
-          <div class="text-sm text-gray-600 font-medium w-full mt-1">
+          <div class="text-md text-gray-600 font-medium w-full mt-1">
             List the Configuration Checks
           </div>
         </div>
@@ -190,34 +188,29 @@
         <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-0 ml-0 self-start">
           Extend & Innovate
         </span>
-        <div class="text-sm text-gray-600 font-medium w-full mt-1">
+        <div class="text-md text-gray-600 font-medium w-full mt-1">
           Summarize action to integrate Azure AI Foundry
         </div>
       </a>
     </div>
     <div class="flex justify-center mt-2 space-x-2">
-      <a href="index2.html" class="max-w-xs w-64 h-24 flex items-center justify-center bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb] flex-col items-start" >
-        <div class="flex flex-col w-full -mt-4">
-          <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-[-8px] ml-0 self-start">
-            Security
-          </span>
-          <div class="text-sm text-gray-600 font-medium w-full mt-1">
-            Summarize security vulnarabilities
-          </div>
+      <a href="index2.html" class="max-w-xs w-64 h-24 flex items-center justify-center bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb] flex-col items-start">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-0 ml-0 self-start">
+          Security
+        </span>
+        <div class="text-md text-gray-600 font-medium w-full mt-1">
+          Summarize security vunerabilities for <strong>Oracle EBS</strong>
         </div>
       </a>
       <a
         href="index2.html"
-        class="max-w-xs w-64 h-24 flex items-center justify-center bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb] flex-col items-start" >
-        <div class="flex flex-col w-full -mt-4">
-          <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-[-8px] ml-0 self-start">
-            Health
-          </span>
-          <div class="text-sm text-gray-600 font-medium w-full mt-1">
-            Summarize health of my workload
-          </div>
+        class="max-w-xs w-64 h-24 flex items-center justify-center bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb] flex-col items-start">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-0 ml-0 self-start">
+          Health
+        </span>
+        <div class="text-md text-gray-600 font-medium w-full mt-1">
+          Summarize health of my workload
         </div>
-      </a>
       </a>
       <a
         href="index2.html"
@@ -225,15 +218,15 @@
         <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 mt-0 ml-0 self-start">
           Monitoring
         </span>
-        <div class="text-sm text-gray-600 font-medium w-full mt-1">
-          Show me the weekly Backup of my production
+        <div class="text-md text-gray-600 font-medium w-full mt-1">
+          Show me the weekly backup of my production
         </div>
       </a>
     </div>
   </div>
   <div class="flex justify-end mt-3">
     <div class="flex items-center justify-end w-[60%] mx-auto mt-2">
-      <div class="text-sm font-semibold text-[#0078d4] cursor-pointer hover:underline flex items-center ml-2">
+      <div class="text-md font-semibold text-[#0078d4] cursor-pointer hover:underline flex items-center ml-2">
         See more
         <span class="material-icons ml-1 text-base">arrow_downward</span>
       </div>
