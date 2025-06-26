@@ -24,7 +24,7 @@
     <!-- Main Menu Section -->
     <div>
       <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
-      <a href="dashboard.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+      <a href="index.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
         <span class="material-icons mr-3">dashboard</span> Dashboard
       </a>
     </div>
@@ -38,11 +38,14 @@
         </button>
         <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
-        <!-- <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
-          Workload Configuration
-        </button> -->
-        <a href="index.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
-
+        <a href="workload_config_ landing.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+            <!-- <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Applications
+        </button>
+        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
+        </div> -->
       </div>
           <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
@@ -66,7 +69,6 @@
             <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
             <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
         </div>
-          
         </div>  
       </div>
       </div>
@@ -124,99 +126,44 @@
     </div>
     </div>
 
+
   <!-- Main Content -->
   <div class="flex-1 flex flex-col bg-white justify-between">
     <!-- Center Content -->
-    <div class="flex flex-col items-center justify-center flex-grow text-center mt-8">
-      
-      <div>
+    <div class="flex flex-col items-center justify-center flex-grow text-center">
       <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
       <h1 class="text-4xl font-bold mb-2">Welcome to Oracle Hub on Azure!</h1>
-      <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
-      </div>
-      <!-- Input Area -->
-      <div class="p-7 border-0 rounded-3xl bg-gradient-to-br from-[#e6f0fa] via-[#f9fbfd] to-[#d0e6f7] shadow-2xl flex items-center gap-6 w-[55%] mx-auto mb-10 relative mt-6">
-      <!-- Decorative Glow -->
-      <div class="absolute -left-8 -top-8 w-24 h-24 bg-[#0078d4]/10 rounded-full blur-2xl pointer-events-none"></div>
-      <!-- Copilot Logo -->
-      <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg h-10 w-10 border-4 border-[#0078d4]">
-        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-8 w-12 object-contain" />
-      </div>
-      <!-- Input -->
-      <input
-        type="text"
-        placeholder="Ask Workload Hub anything…"
-        class="flex-1 bg-white/90 text-black p-5 rounded-xl border border-[#b3d4fc] outline-none focus:ring-4 focus:ring-[#0078d4]/30 transition-shadow text-lg shadow placeholder-gray-500 placeholder-opacity-60 font-medium"
-      />
-      <!-- Send Button -->
-      <button class="bg-gradient-to-r from-[#0078d4] to-[#005a9e] hover:from-[#005a9e] hover:to-[#0078d4] transition-all text-white px-8 py-4 rounded-xl font-bold flex items-center text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0078d4] active:scale-95">
-        <span class="material-icons mr-2 text-2xl">send</span>
-        Send
-      </button>
-      </div>
+      <p class="text-gray-600 text-lg">Select a role from the sidebar or type a prompt below to get started.</p>
+    </div>
 
-      <!-- Suggested Cards -->
-      <div class="flex flex-col items-center w-full mt-1">
-      <div class="flex flex-wrap justify-center gap-6 w-full max-w-5xl mx-auto">
-        <!-- Row 1 -->
-        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Management
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          Help me Enroll my application into the Hub
-        </div>
+    <!-- Suggested Cards -->
+    <div class="p-4 border-t border-blue-200 bg-blue-50">
+      <div class="text-sm font-semibold mb-3 text-[#0078d4]">Try these quick actions:</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="index2.html" class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Build an Oracle Hub</div>
         </a>
-        <a href="configChecks.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Configuration Drifts
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle EBS': List the Configuration Checks as per best practices
-        </div>
+        <a href="index2.html" class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Modify Oracle Hub</div>
         </a>
-        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Extend & Innovate
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle Appl2': Accelerate AI/Analytics with Fabric Mirroring
-        </div>
+        <a href="index2.html" class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Enroll into services for Hub Validation</div>
         </a>
-        <!-- Row 2 -->
-        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Microsoft Sentinel
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle Appl2': Security Alert - Suspicious Sign-in Detected
-        </div>
-        </a>
-        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Azure Monitor
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle EBS': Summarize Health Status
-        </div>
-        </a>
-        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
-        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
-          Extend & Innovate
-        </span>
-        <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle Appl3': Build Agentic AI applications with Azure AI Foundry
-        </div>
-        </a>
-      </div>
-      <div class="flex justify-end w-full mt-3 max-w-5xl mx-auto">
-        <div class="text-md font-semibold text-[#0078d4] cursor-pointer hover:underline flex items-center">
-        See more
-        <span class="material-icons ml-1 text-base">arrow_downward</span>
-        </div>
-      </div>
+        <a href="index2.html" class="bg-white border border-[#0078d4] p-4 rounded-lg cursor-pointer hover:bg-[#0078d4] hover:text-white transition">
+          <div class="text-sm">Delete Oracle Hub</div>
+        </a>        
       </div>
     </div>
-</div>
+
+    <!-- Input Area -->
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3">
+      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6 w-9" />
+      <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow"
+        onkeydown="if(event.key==='Enter'){event.preventDefault();handleConditionalEvent();handleSend();}" />
+      <button id="sendButton" onclick="handleConditionalEvent(); handleSend();" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+        <span class="material-icons mr-2">send</span> Send
+      </button>
+    </div>
+  </div>
 </body>
 </html>
