@@ -13,9 +13,86 @@
       element.classList.toggle('hidden');
     }
   }
+
+// Function to open the popup
+  function openPopup() {
+  document.getElementById('popupCard').classList.remove('hidden');
+  document.getElementById('mainContent').classList.add('blur-sm');
+
+  document.getElementById('popupTitle').textContent = 'Detecting your data source…';
+  document.getElementById('popupText').textContent = 'Please wait while we identify your Oracle environment for integration...';
+  document.getElementById('popupClose').classList.add('hidden');
+
+  setTimeout(() => {
+    document.getElementById('popupTitle').innerHTML = '<span class="text-lg font-semibold text-[#0078d4]">Detected Data Sources</span>';
+    document.getElementById('popupText').innerHTML = `
+      <div class="mb-2">
+      <a href="#" class="text-black font-medium underline italic hover:text-[#005a9e] transition">Click here to explore data insights</a>
+      </div>
+      <ul class="text-left space-y-3">
+      <li class="flex items-center bg-[#f0f6fb] rounded-lg px-3 py-2 shadow-sm">
+      <span class="material-icons text-2xl mr-3 text-green-600">check_circle</span>
+      <div>
+      <div class="font-semibold text-black text-base">Fabric Lakehouse Connection</div>
+      <div class="text-gray-500 text-sm">Connected</div>
+      </div>
+      </li>
+      <li class="flex items-center bg-[#f0f6fb] rounded-lg px-3 py-2 shadow-sm">
+      <span class="material-icons text-2xl mr-3 text-green-600">check_circle</span>
+      <div>
+      <div class="font-semibold text-black text-base">Data Agent - Validator Agent</div>
+      <div class="text-gray-500 text-sm">Connected </div>
+      </div>
+      </li>
+      </ul>
+      <div class="mt-8 flex items-center justify-center">
+      <input type="file" id="fileInput" class="hidden" />
+      <button
+      type="button"
+      onclick="document.getElementById('fileInput').click()"
+      class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#0078d4] to-[#005a9e] shadow-lg hover:from-[#005a9e] hover:to-[#0078d4] transition-all group border-none focus:outline-none focus:ring-2 focus:ring-[#0078d4] active:scale-95"
+      >
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-white text-[#0078d4] text-xl font-bold mr-1 group-hover:bg-[#e6f0fa] transition">+</span>
+      <span class="font-semibold text-base text-white group-hover:underline transition">Add new source</span>
+      <span class="material-icons text-white text-xl group-hover:text-[#e6f0fa] transition">upload_file</span>
+      </button>
+      </div>
+      </button>
+      </div>
+    `;
+    document.querySelector('#popupCard .animate-spin')?.remove();
+    document.getElementById('popupClose').classList.remove('hidden');
+  }, 5000);
+}
+
+function closePopup() {
+  document.getElementById('popupCard').classList.add('hidden');
+  document.getElementById('mainContent').classList.remove('blur-sm');
+}
+
 </script>
 </head>
 <body class="flex h-screen overflow-hidden bg-white text-black">
+
+  <!-- Popup Modal -->
+<div id="popupCard" onclick="closePopup()" class="hidden fixed top-0 right-0 bottom-0 left-64 z-50 flex items-center justify-center bg-black bg-opacity-50">
+  <div onclick="event.stopPropagation()" class="bg-white p-8 rounded-xl shadow-2xl w-[90%] max-w-xl">
+    <div class="flex flex-col items-center">
+      <h2 id="popupTitle" class="text-2xl font-bold mb-4 text-[#0078d4]">Detecting your data source…</h2>
+      <div class="w-10 h-10 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+      <p id="popupText" class="text-gray-700 text-center">
+        Please wait while we identify your Oracle environment for integration...
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <button id="popupClose" onclick="closePopup()" class="mt-6 px-4 py-2 bg-[#0078d4] text-white rounded-lg hover:bg-[#005a9e] transition hidden">
+      Connect
+      </button>
+    </div>
+  </div>
+</div>
+
+
 
   <!-- Sidebar -->
   <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
@@ -125,7 +202,8 @@
     </div>
 
   <!-- Main Content -->
-  <div class="flex-1 flex flex-col bg-white justify-between">
+  <div id="mainContent" class="flex-1 flex flex-col bg-white justify-between transition-all duration-300">
+
     <!-- Center Content -->
     <div class="flex flex-col items-center justify-center flex-grow text-center mt-8">
       
@@ -175,14 +253,18 @@
           'Oracle EBS': List the Configuration Checks as per best practices
         </div>
         </a>
-        <a href="E_ICopilot.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+
+
+        <div onclick="openPopup()" class="cursor-pointer w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
         <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
           Extend & Innovate
         </span>
         <div class="text-md text-gray-600 font-medium mt-1">
           'Oracle Appl2': Accelerate AI/Analytics with Fabric Mirroring
         </div>
-        </a>
+        </div>
+
+
         <!-- Row 2 -->
         <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
         <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
@@ -205,7 +287,7 @@
           Extend & Innovate
         </span>
         <div class="text-md text-gray-600 font-medium mt-1">
-          'Oracle Appl3': Build Agentic AI applications with AI Foundry
+          'Oracle Appl3': Build Agentic AI applications with Azure AI Foundry
         </div>
         </a>
       </div>
