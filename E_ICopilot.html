@@ -144,7 +144,7 @@
                     <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
                     <div>
                         <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-                        <div>Detecting data sources for your application...</div>
+                        <div>Discovering data sources for your application...</div>
                     </div>
                 `;
                 chatWindow.appendChild(copilotBubble);
@@ -198,7 +198,7 @@
                                 <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
                                 <div>
                                 <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-                                <div>Discovering data sources for the application...</div>
+                                <div>Detecting data sources for your application...</div>
                                 </div>
                             `;
                             chatWindow.appendChild(copilotBubble);
@@ -315,7 +315,7 @@
 
                                                     setTimeout(function () {
                                                         window.open(
-                                                        "https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl",
+                                                        "https://ca-api-2kdpqk6jon3pe--0000001.proudmoss-f32f8968.eastus.azurecontainerapps.io/",
                                                         "_blank"
                                                         );
                                                     }, 3000);
@@ -407,7 +407,7 @@
                     <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
                     <div>
                     <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-                    <div>Discovering data sources for the application...</div>
+                    <div>Detecting data sources for the application...</div>
                     </div>
                 `;
                 chatWindow.appendChild(copilotBubble);
@@ -524,7 +524,7 @@
 
                             setTimeout(function () {
                                 window.open(
-                                "https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl",
+                                "https://ca-api-2kdpqk6jon3pe--0000001.proudmoss-f32f8968.eastus.azurecontainerapps.io/",
                                 "_blank"
                                 );
                             }, 3000);
@@ -594,30 +594,3 @@ function handleConditionalEvent() {
 }
 
 </script>
-
-
-
-    
-
-
-  
-  <script>
-  function handleSend() {
-    const input = document.getElementById("userInput");
-    const message = input.value.trim();
-    if (message === "") return;
-
-    const chatWindow = document.getElementById("chatWindow");
-
-    // User bubble
-    const userBubble = document.createElement("div");
-    userBubble.className = "bg-[#0078d4] text-white max-w-md px-4 py-3 rounded-lg self-end";
-    userBubble.textContent = message;
-    chatWindow.appendChild(userBubble);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-    input.value = "";
-
-    // Don't proceed with Copilot responses if message is "oracle ebs hub"
-    if (message.toLowerCase() === "oracle ebs") return;
-
-    }
