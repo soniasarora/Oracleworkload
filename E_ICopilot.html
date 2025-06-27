@@ -192,18 +192,7 @@
                         setTimeout(() => {
                             loadingDiv1.remove();
                             // Copilot bubble: discovering data sources
-                            const copilotBubble = document.createElement("div");
-                            copilotBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
-                            copilotBubble.innerHTML = `
-                                <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
-                                <div>
-                                <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-                                <div>Detecting data sources for your application...</div>
-                                </div>
-                            `;
-                            chatWindow.appendChild(copilotBubble);
-                            chatWindow.scrollTop = chatWindow.scrollHeight;
-
+                            
                             // Show loading bar before next Copilot bubble
                             const loadingDiv2 = showLoadingBar(chatWindow);
 
@@ -217,7 +206,7 @@
                                 <div>
                                     <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
                                     <div>
-                                    <span class='text-[#0078d4] font-semibold'>mfstodbaa1</span> is your subscription.<br>
+                                    <span class='text-[#0078d4] font-semibold'>msftodbaa1</span> is your subscription.<br>
                                     Press submit to proceed.
                                     <br>
                                     <button type="button" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" id="showDataSourceSelection">Submit</button>
@@ -234,34 +223,119 @@
 
                                     setTimeout(() => {
                                         loadingDiv3.remove();
-                                        // Copilot bubble: select data sources
-                                        const copilotBubble3 = document.createElement("div");
-                                        copilotBubble3.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
-                                        copilotBubble3.innerHTML = `
-                                        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
-                                        <div>
-                                            <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-                                            <div class="mb-2">Select the data sources to connect to:</div>
-                                            <form id="dataSourceSelectionForm" class="space-y-2">
-                                            <label class="flex items-center space-x-2">
-                                                <input type="checkbox" name="dataSources" value="Fabric Lakehouse" class="form-checkbox text-[#0078d4]" />
-                                                <span>Fabric Lakehouse</span>
-                                            </label>
-                                            <label class="flex items-center space-x-2">
-                                                <input type="checkbox" name="dataSources" value="Data Agent for insights" class="form-checkbox text-[#0078d4]" />
-                                                <span>Data Agent for insights</span>
-                                            </label>
-                                            <label class="flex items-center space-x-2 cursor-pointer">
-                                                <button type="button" id="addNewDataSourceBtn" class="flex items-center justify-center w-6 h-6 rounded-full bg-[#0078d4] text-white text-lg focus:outline-none hover:bg-[#005a9e]" title="Add new data source">
-                                                +
-                                                </button>
-                                                <span>Add new data source</span>
-                                                <input type="file" id="fileInput" class="hidden" />
-                                            </label>
-                                            <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]">Submit</button>
-                                            </form>
-                                        </div>
+
+                                        const copilotBubble = document.createElement("div");
+                                        copilotBubble.className = "bg-blue-100 text-black max-w-lg px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+                                        copilotBubble.innerHTML = `
+                                            <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+                                            <div>
+                                                <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+                                                <div class="flex flex-wrap items-center">Detecting existing data sources for the subscription&nbsp;<span class="text-[#0078d4] font-semibold">msftodaa1</span></div>
+                                            </div>
                                         `;
+                                        // Increase bubble width
+                                        copilotBubble.style.maxWidth = "32rem";
+                                        chatWindow.appendChild(copilotBubble);
+                                        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+
+
+                            
+                                        
+                                        // Show loading bar before Copilot bubble: select data sources
+                                        const loadingDivSelect = showLoadingBar(chatWindow);
+
+                                        setTimeout(() => {
+                                            loadingDivSelect.remove();
+                                            // Copilot bubble: select data sources
+                                            const copilotBubble3 = document.createElement("div");
+                                            copilotBubble3.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+                                            copilotBubble3.innerHTML = `
+                                            <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+                                            <div>
+                                                <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+                                                <div class="mb-2">Select the data sources to connect to:</div>
+                                                <form id="dataSourceSelectionForm" class="space-y-2">
+                                                <label class="flex items-center space-x-2">
+                                                    <input type="checkbox" name="dataSources" value="Fabric Lakehouse" class="form-checkbox text-[#0078d4]" />
+                                                    <span>Fabric Lakehouse</span>
+                                                </label>
+                                                <label class="flex items-center space-x-2">
+                                                    <input type="checkbox" name="dataSources" value="Data Agent for insights" class="form-checkbox text-[#0078d4]" />
+                                                    <span>Data Agent for insights</span>
+                                                </label>
+                                                <label class="flex items-center space-x-2 cursor-pointer">
+                                                    <button type="button" id="addNewDataSourceBtn" class="flex items-center justify-center w-6 h-6 rounded-full bg-[#0078d4] text-white text-lg focus:outline-none hover:bg-[#005a9e]" title="Add new data source">
+                                                    +
+                                                    </button>
+                                                    <span>Add new data source</span>
+                                                    <input type="file" id="fileInput" class="hidden" />
+                                                </label>
+                                                <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]">Submit</button>
+                                                </form>
+                                            </div>
+                                            `;
+                                            chatWindow.appendChild(copilotBubble3);
+                                            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                                            // Add logic for file explorer when plus button is clicked
+                                            const addNewBtn = chatWindow.querySelector("#addNewDataSourceBtn");
+                                            const fileInput = chatWindow.querySelector("#fileInput");
+                                            const dataSourceForm = chatWindow.querySelector("#dataSourceSelectionForm");
+                                            if (addNewBtn && fileInput && dataSourceForm) {
+                                                addNewBtn.addEventListener("click", function (e) {
+                                                    e.preventDefault();
+                                                    fileInput.click();
+                                                });
+                                                fileInput.addEventListener("change", function () {
+                                                    if (fileInput.files && fileInput.files.length > 0) {
+                                                        const fileName = fileInput.files[0].name;
+                                                        // Create new checkbox label
+                                                        const newLabel = document.createElement("label");
+                                                        newLabel.className = "flex items-center space-x-2";
+                                                        newLabel.innerHTML = `
+                                                            <input type="checkbox" name="dataSources" value="${fileName}" class="form-checkbox text-[#0078d4]" checked />
+                                                            <span>${fileName}</span>
+                                                        `;
+                                                        // Insert before the add new data source label
+                                                        const addLabel = dataSourceForm.querySelector("#addNewDataSourceBtn").closest("label");
+                                                        dataSourceForm.insertBefore(newLabel, addLabel);
+                                                    }
+                                                });
+                                            }
+
+                                            // Handle submit for dataSourceSelectionForm
+                                            if (dataSourceForm) {
+                                                dataSourceForm.onsubmit = function (e) {
+                                                    e.preventDefault();
+                                                    // Show loading bar before Copilot thinking bubble
+                                                    const loadingDiv4 = showLoadingBar(chatWindow);
+
+                                                    setTimeout(function () {
+                                                        loadingDiv4.remove();
+                                                        // Mimic thinking effect
+                                                        const thinkingBubble = document.createElement("div");
+                                                        thinkingBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
+                                                        thinkingBubble.innerHTML = `
+                                                            <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
+                                                            <div>
+                                                            <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
+                                                            <div>Connecting to selected data sources...</div>
+                                                            </div>
+                                                        `;
+                                                        chatWindow.appendChild(thinkingBubble);
+                                                        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                                                        setTimeout(function () {
+                                                            window.open(
+                                                            "https://ca-api-2kdpqk6jon3pe--0000001.proudmoss-f32f8968.eastus.azurecontainerapps.io/",
+                                                            "_blank"
+                                                            );
+                                                        }, 3000);
+                                                    }, 3000);
+                                                };
+                                            }
+                                        }, 3000);
                                         chatWindow.appendChild(copilotBubble3);
                                         chatWindow.scrollTop = chatWindow.scrollHeight;
 
@@ -322,6 +396,7 @@
                                                 }, 3000);
                                             };
                                         }
+                                        
                                     }, 3000);
                                 };
                             }, 3000);
