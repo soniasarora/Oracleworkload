@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oracle Workload Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('hidden');
+    }
+  }
+</script>
+  <style>
+  .card-flip {
+    perspective: 1000px;
+  }
+  .card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .card-flip:hover .card-inner {
+    transform: rotateX(180deg);
+  }
+  .card-front, .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #0078d4;
+  }
+  .card-front {
+    background-color: white;
+    color: black;
+    z-index: 2;
+  }
+  .card-back {
+    background-color: #0078d4;
+    color: white;
+    transform: rotateX(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+  }
+</style>
+</head>
+<body class="flex h-screen overflow-hidden bg-white text-black">
+  <!-- Sidebar -->
+  <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">Oracle Hub</div>
+
+    <!-- Main Menu Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
+      <a href="index.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">dashboard</span> Dashboard
+      </a>
+    </div>
+
+    <!-- Roles Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Roles</div>
+            <div class="space-y-1">
+        <button onclick="toggleDropdown('hubResourcesDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">menu_book</span> Workload Administrator
+        </button>
+        <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
+          <div class="space-y-1">
+        <a href="index.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Applications
+        </button>
+        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
+        </div>
+      </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
+          <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Validation
+        </button>
+        <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
+          <a href="" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
+        </div>
+          <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Management
+        </button>
+          <div id="hubValidationDropdown4" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Monitor</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Backup</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Cost Analysis</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
+        </div>
+        </div>  
+      </div>
+      </div>
+
+       
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">build</span> Infra Administator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">storage</span> DBA Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">code</span> Application Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">backup</span> Backup Administrator
+      </a>
+
+
+    <!-- Resources Section -->
+    <div class="mt-4">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Resources</div>
+
+      <!-- Related Services Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('relatedDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">link</span> Related Services
+        </button>
+        <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Resources</a>
+        </div>
+      </div>
+      <!-- Help Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">help</span> Help
+        </button>
+        <div id="helpDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Support + Trouble shooting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Section -->
+    <div class="mt-auto p-2 border-t border-blue-900">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">System</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">settings</span> Settings
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">logout</span> Log Out
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between">
+    <!-- Center Content -->
+    <div class="flex flex-col items-center justify-center flex-grow text-center">
+      <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
+      <h1 class="text-4xl font-bold mb-2">Welcome to Oracle Hub on Azure!</h1>
+      <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
+    </div>
+
+    <!-- Suggested Cards -->
+    <div class="p-6 pt-2 flex-grow flex flex-col justify-start">
+    <div class="text-sm font-semibold mb-3 text-[#0078d4] text-left max-w-4xl mx-auto w-full">Interact with action cards to learn more:</div>
+      <div class="flex flex-col gap-3 items-center">
+
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+      <div class="card-inner">
+        <div class="card-front flex flex-col justify-center">
+          <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Workload Administrator</div>
+          <div class="text-base text-center">Build | Enroll | Delete an Oracle Hub</div>
+        </div>
+        <div class="card-back">
+          Launch Oracle Workload Hub setup 
+        </div>
+      </div>
+    </a>
+        
+    <a href="configChecks.html" class="card-flip w-full max-w-4xl h-24 block">
+      <div class="card-inner">
+        <div class="card-front flex flex-col justify-center">
+          <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Workload Administrator</div>
+          <div class="text-base text-center">Configuration Checks</div>
+        </div>
+        <div class="card-back">
+            Your Subscription adb6c79a-ae57-4414-a97e-f9d68f5fa3e8 does not have advanced networking features enabled. Turning on will enhance your virtual networking experience by providing better security, performance, and control. Click to start the enabling process.
+        </div>
+      </div>
+    </a>
+        
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+          <div class="card-inner">
+            <div class="card-front flex flex-col justify-center">
+              <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Infrastructure Administrator</div>
+              <div class="text-base text-center">Health Checks</div>
+            </div>
+            <div class="card-back">
+              You have a long running process in your application tier Appl Tier1. This is consuming memory >50%.
+            </div>
+          </div>
+    </a>
+    <a href="index2.html" class="card-flip w-full max-w-4xl h-24 block">
+          <div class="card-inner">
+            <div class="card-front flex flex-col justify-center">
+              <div class="text-sm text-gray-500 mb-1 text-center max-w-4xl">Infrastructure Administrator</div>
+              <div class="text-base text-center">BackUp Management</div>
+            </div>
+            <div class="card-back">
+              The weekly backup of the exadata cluster def-vmc has failed due to insufficient storage space on {insert storage name}
+            </div>
+          </div>
+    </a>
+        
+
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
+  <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
+  <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow"
+    onkeydown="if(event.key==='Enter'){event.preventDefault();handleConditionalEvent();handleSend();}" />
+  <button id="sendButton" onclick="handleConditionalEvent(); handleSend();" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+    <span class="material-icons mr-2">send</span> Send
+  </button>
+    </div>
+</body>
+</html>

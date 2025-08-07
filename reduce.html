@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-black">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oracle Workload Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+  function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('hidden');
+    }
+  }
+</script>
+</head>
+<body class="flex h-screen overflow-hidden bg-white text-black">
+
+  <!-- Sidebar -->
+  <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">Oracle Hub</div>
+
+    <!-- Main Menu Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
+      <a href="index.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">dashboard</span> Dashboard
+      </a>
+    </div>
+
+    <!-- Roles Section -->
+    <div>
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Roles</div>
+            <div class="space-y-1">
+        <button onclick="toggleDropdown('hubResourcesDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">menu_book</span> Workload Administrator
+        </button>
+        <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
+          <div class="space-y-1">
+        <!-- <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Configuration
+        </button> -->
+        <a href="workload_config_ landing.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+
+      </div>
+          <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
+          <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Validation
+        </button>
+        <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
+          <a href="configChecks.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
+        </div>
+          <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+          Workload Management
+        </button>
+          <div id="hubValidationDropdown4" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Monitor</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Backup</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Cost Analysis</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
+        </div>
+        </div>  
+      </div>
+      </div>
+
+       
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">build</span> Infra Administator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">storage</span> DBA Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">code</span> Application Administrator
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">backup</span> Backup Administrator
+      </a>
+
+
+
+    <!-- Resources Section -->
+    <div class="mt-4">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Resources</div>
+
+      <!-- Related Services Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('relatedDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">link</span> Related Services
+        </button>
+        <div id="relatedDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Services</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Related Resources</a>
+        </div>
+      </div>
+      <!-- Help Dropdown -->
+      <div class="space-y-1">
+        <button onclick="toggleDropdown('helpDropdown')" class="flex items-center w-full px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+          <span class="material-icons mr-3">help</span> Help
+        </button>
+        <div id="helpDropdown" class="ml-8 space-y-1 hidden">
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Support + Trouble shooting</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Section -->
+    <div class="mt-auto p-2 border-t border-blue-900">
+      <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">System</div>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">settings</span> Settings
+      </a>
+      <a href="#" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+        <span class="material-icons mr-3">logout</span> Log Out
+      </a>
+    </div>
+    </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col bg-white justify-between">
+    <!-- Center Content -->
+    <div class="flex flex-col items-center justify-center flex-grow text-center mt-8">
+      
+      <div>
+      <span class="material-icons text-7xl text-[#0078d4] mb-4">hub</span>
+      <h1 class="text-4xl font-bold mb-2">Welcome to Oracle Hub on Azure!</h1>
+      <p class="text-gray-600 text-lg">Select a role from the sidebar or try these quick actions below.</p>
+      </div>
+      <!-- Input Area -->
+      <div class="p-7 border-0 rounded-3xl bg-gradient-to-br from-[#e6f0fa] via-[#f9fbfd] to-[#d0e6f7] shadow-2xl flex items-center gap-6 w-[55%] mx-auto mb-10 relative mt-6">
+      <!-- Decorative Glow -->
+      <div class="absolute -left-8 -top-8 w-24 h-24 bg-[#0078d4]/10 rounded-full blur-2xl pointer-events-none"></div>
+      <!-- Copilot Logo -->
+      <div class="flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg h-10 w-10 border-4 border-[#0078d4]">
+        <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-8 w-12 object-contain" />
+      </div>
+      <!-- Input -->
+      <input
+        type="text"
+        placeholder="Ask Workload Hub anything…"
+        class="flex-1 bg-white/90 text-black p-5 rounded-xl border border-[#b3d4fc] outline-none focus:ring-4 focus:ring-[#0078d4]/30 transition-shadow text-lg shadow placeholder-gray-500 placeholder-opacity-60 font-medium"
+      />
+      <!-- Send Button -->
+      <button class="bg-gradient-to-r from-[#0078d4] to-[#005a9e] hover:from-[#005a9e] hover:to-[#0078d4] transition-all text-white px-8 py-4 rounded-xl font-bold flex items-center text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0078d4] active:scale-95">
+        <span class="material-icons mr-2 text-2xl">send</span>
+        Send
+      </button>
+      </div>
+
+      <!-- Suggested Cards -->
+      <div class="flex flex-col items-center w-full mt-1">
+      <div class="flex flex-wrap justify-center gap-6 w-full max-w-5xl mx-auto">
+        <!-- Row 1 -->
+        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Management
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          Help me with operations for Oracle Workload Hub
+        </div>
+        </a>
+        <a href="configChecks.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Best Practices
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          List the Configuration Checks for 'Oracle EBS' application
+        </div>
+        </a>
+        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Extend & Innovate
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          Summarize actions to integrate Azure AI Foundry into 'Oracle EBS' application
+        </div>
+        </a>
+        <!-- Row 2 -->
+        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Security
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          Summarize security vunerabilities for 'Oracle EBS' application
+        </div>
+        </a>
+        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Health
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          Summarize health of 'Oracle EBS' application
+        </div>
+        </a>
+        <a href="index2.html" class="w-72 h-28 flex flex-col justify-between bg-white border border-[#0078d4] rounded-lg p-4 text-left hover:shadow-lg transition-shadow hover:bg-[#f0f6fb]">
+        <span class="inline-block bg-[#e6f0fa] text-[#0078d4] text-xs font-bold px-2 py-1 rounded-full mb-1 self-start">
+          Monitoring
+        </span>
+        <div class="text-md text-gray-600 font-medium mt-1">
+          Show me the weekly backup of 'Oracle EBS' application
+        </div>
+        </a>
+      </div>
+      <div class="flex justify-end w-full mt-3 max-w-5xl mx-auto">
+        <div class="text-md font-semibold text-[#0078d4] cursor-pointer hover:underline flex items-center">
+        See more
+        <span class="material-icons ml-1 text-base">arrow_downward</span>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>

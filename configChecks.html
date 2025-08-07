@@ -18,12 +18,12 @@
 <body class="flex h-screen overflow-hidden bg-white text-black">
   <!-- Sidebar -->
   <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
-    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">Oracle Hub</div>
 
     <!-- Main Menu Section -->
     <div>
       <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
-      <a href="https://tremiore.github.io/hub/" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+      <a href="index.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
         <span class="material-icons mr-3">dashboard</span> Dashboard
       </a>
     </div>
@@ -37,27 +37,20 @@
         </button>
         <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
-        <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+        <a href="workload_config_ landing.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+        <!-- <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Configuration
-        </button>
-            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
-          Workload Applications
-        </button>
-        <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
-        </div>
+        </button> -->
       </div>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
+          <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
           <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Validation
         </button>
         <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendations</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
         </div>
           <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Management
@@ -67,10 +60,11 @@
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Backup</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Cost Analysis</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
-            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
-            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
-        </div>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
+        </div>
+          
         </div>  
       </div>
       </div>
@@ -128,58 +122,53 @@
     </div>
 
 
- <!-- Main Content -->
+<!-- Main Content -->
   <div class="flex-1 flex flex-col bg-white justify-between">
     <!-- Chat Window Content -->
     <div class="flex flex-col flex-grow overflow-y-auto p-6 space-y-4">
       <!-- Simulated Chat -->
-      <div class="bg-white shadow-[0_20px_40px_rgba(0,0,0,0.35)] text-black w-full max-w-[60%] px-4 py-4 rounded-lg self-center flex items-start space-x-2 mt-80">
+      <div class="bg-white shadow-[0_25px_50px_rgba(0,0,0,0.45)] text-black w-[95%] max-w-[95%] px-32 py-40 rounded-lg mx-auto my-auto text-2xl flex items-center justify-center h-fit">
           <div class="mb-2">
-            <strong>Based on your configuration checks, the following need attention!</strong>
-            <div class="overflow-x-auto mt-2 flex justify-center items-center">
-              <table class="min-w-fit text-sm text-left text-black border border-blue-200 whitespace-nowrap space-x-2 bg-white">
+            <strong class="block mb-2 mt-[-4rem]">Recommendations based on configuration of Well Architected Framework!</strong>
+            
+            <div class="overflow-x-auto mt-4 w-full h-full">
+              <table class="w-full h-full table-auto text-2xl">
                 <thead class="bg-blue-100">
                   <tr>
-                    <th class="px-4 py-2">Drift Type</th>
-                    <th class="px-4 py-2">Impact Severity</th>
-                    <th class="px-4 py-2">Recommendation</th>
+                    <th class="px-4 py-2 w-[60%] text-left">Cofiguration Check(s)</th>
+                    <th class="px-4 py-2 text-left">Impact Severity</th>
+                    <th class="px-4 py-2 text-left">Recommendation</th>
                   </tr>
                 </thead>
-                <tbody class="bg-white">
-                  <tr class="border border-blue-200">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Write Accelerator not enabled on Oracle Database @Azure workloads</td>
+                <tbody class="bg-white space-y-6">
+                  <tr class="border border-blue-200 align-top">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Advanced Networking Features are disabled for <br>Sub Id adb6c79a-ae57-4414-a97e-f9d68f5fa3e8</td>
                     <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl">Take Action</a></td>
+                    <td class="px-4 py-2"><a href="https://ca-api-2kdpqk6jon3pe--0000001.proudmoss-f32f8968.eastus.azurecontainerapps.io/" target="_blank" class="inline-block bg-[#0078d4] text-white px-4 py-2 mt-2 rounded hover:bg-[#005a9e] transition-colors">Take Action</a></td>
                   </tr>
-                  <tr class="border border-blue-200">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Accelerated Networking missing</td>
+                  <tr class="border border-blue-200 align-top">
+                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Accelerated Networking disabled for <br>Sub Id adb6c79a-ae57-4414-a97e-f9d68f5fa3e6</td>
                     <td class="px-4 py-2 text-[#FF3B30] cursor-pointer">High</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl">Take Action</a></td>
-                  </tr>
-                  <tr class="border border-blue-200">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Accelerated Networking disabled</td>
-                    <td class="px-4 py-2 text-[#FFD60A] cursor-pointer">Medium</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl">Take Action</a></td>
-                  </tr>
-                  <tr class="border border-blue-200">
-                    <td class="px-4 py-2 text-[#0078d4] cursor-pointer">Incorrect disk caching (ReadWrite on OS disk)</td>
-                    <td class="px-4 py-2 text-[#FFD60A] cursor-pointer">Medium</td>
-                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl">Take Action</a></td>
+                    <td class="px-4 py-2"><a href="https://ai.azure.com/resource/agents?wsid=/subscriptions/adb6c79a-ae57-4414-a97e-f9d68f5fa3e8/resourceGroups/AgenticAI/providers/Microsoft.CognitiveServices/accounts/test-networkpoc-project-resource/projects/test-fabric-project&tid=9195a8c5-6bc8-41cb-80ef-2e772dbc1f73&assistantId=asst_Evkuaci7CohAo5WaVU3ZkrQl" target="_blank" class="inline-block bg-[#0078d4] text-white px-4 py-2 mt-2 rounded hover:bg-[#005a9e] transition-colors">Take Action</a></td>
                   </tr>
                 </tbody>
               </table>
             </div>
+
+            <div class="mt-32"></div>
+            <p class="text-xl mt-12 text-gray-400 italic">Please review and take actions.</p>
           </div>
         </div>
       </div>
     </div>
   
-    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10 w-full max-w-[calc(100%-16rem)] overflow-x-auto">
-      <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6 w-9" style="width: 2.25rem;" />
-      <input type="text" placeholder="Ask Workload Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
-      <button class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
-        <span class="material-icons mr-2">send</span> Send
-      </button>
-    </div>
+    <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
+  <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
+  <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow"
+    onkeydown="if(event.key==='Enter'){event.preventDefault();handleConditionalEvent();handleSend();}" />
+  <button id="sendButton" onclick="handleConditionalEvent(); handleSend();" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+    <span class="material-icons mr-2">send</span> Send
+  </button>
+</div>
 </body>
 </html>

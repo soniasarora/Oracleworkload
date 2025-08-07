@@ -19,12 +19,12 @@
 
   <!-- Sidebar -->
   <div class="w-64 bg-[#0078d4] text-white shadow-lg h-screen flex flex-col">
-    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">OracleHub</div>
+    <div class="p-4 text-xl font-semibold border-b border-blue-900 whitespace-nowrap overflow-hidden text-ellipsis">Oracle Hub</div>
 
     <!-- Main Menu Section -->
     <div>
       <div class="px-2 py-2 text-white uppercase text-xs font-extrabold tracking-widest">Main Menu</div>
-      <a href="https://tremiore.github.io/hub/" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
+      <a href="index.html" class="flex items-center px-3 py-2 hover:bg-blue-900 hover:text-white rounded-md transition-colors">
         <span class="material-icons mr-3">dashboard</span> Dashboard
       </a>
     </div>
@@ -38,27 +38,24 @@
         </button>
         <div id="hubResourcesDropdown" class="ml-8 space-y-1 hidden">
           <div class="space-y-1">
-        <button onclick="toggleDropdown('#')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
-          Workload Configuration
-        </button>
-            <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
+        <a href="workload_config_ landing.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Configuration</a>  
+            <!-- <button onclick="toggleDropdown('hubValidationDropdown2')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Applications
         </button>
         <div id="hubValidationDropdown2" class="ml-8 space-y-1 hidden">
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle EBS Hub</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Oracle App1</a>
-        </div>
+        </div> -->
       </div>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a>
+          <!-- <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Components</a> -->
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Workload Health</a>  
           <button onclick="toggleDropdown('hubValidationDropdown3')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Validation
         </button>
         <div id="hubValidationDropdown3" class="ml-8 space-y-1 hidden">
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Reccomendations</a>
+          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Advisor Recommendations</a>
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Templates</a>
           <a href="configChecks.html" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Configuration Checks</a>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">BCDR Reccomendations</a>
         </div>
           <button onclick="toggleDropdown('hubValidationDropdown4')" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">
           Workload Management
@@ -70,8 +67,8 @@
           <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Sentinel</a>
             <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Purview</a>
             <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">AKV</a>
+            <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
         </div>
-          <a href="#" class="block px-3 py-1 text-sm text-gray-200 hover:text-white">Security & Governance</a>
         </div>  
       </div>
       </div>
@@ -138,16 +135,17 @@
         <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
         <div>
           <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-          <div>Hello! How can I assist you with your Oracle hub?</div>
+          <div>Hello! How can I assist you with your Oracle Hub?</div>
         </div>
       </div>
 
 
-
+<!-- input area -->
 <div class="p-4 border-t border-blue-200 bg-blue-50 flex items-center space-x-3 fixed bottom-0 left-64 right-0 z-10">
   <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-6" style="width: 2.25rem;" />
-  <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow" />
-  <button id="sendButton" onclick="handleConditionalEvent(); handleSend(); " class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
+  <input id="userInput" type="text" placeholder="Ask Oracle Hub..." class="flex-1 bg-white text-black p-3 rounded-lg border border-[#0078d4] outline-none focus:ring-2 focus:ring-[#0078d4] transition-shadow"
+    onkeydown="if(event.key==='Enter'){event.preventDefault();handleConditionalEvent();handleSend();}" />
+  <button id="sendButton" onclick="handleConditionalEvent(); handleSend();" class="bg-[#0078d4] text-white px-5 py-3 rounded-lg hover:bg-[#005a9e] transition-colors font-semibold flex items-center">
     <span class="material-icons mr-2">send</span> Send
   </button>
 </div>
@@ -157,11 +155,11 @@ function handleConditionalEvent() {
   const input = document.getElementById("userInput");
   const message = input.value.trim().toLowerCase();
 
-  if (message === "oracle ebs hub") {
+  if (message === "oracle ebs") {
     setTimeout(() => {
       const chatWindow = document.getElementById("chatWindow");
 
-      // Removed duplicate user bubble for 'Oracle EBS Hub'
+      // Removed duplicate user bubble for 'Oracle EBS'
 
       const mappingBubble = document.createElement("div");
       mappingBubble.className = "bg-blue-100 text-black max-w-md px-4 py-3 rounded-lg self-start flex items-start space-x-2";
@@ -169,7 +167,7 @@ function handleConditionalEvent() {
         <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
         <div>
           <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-          <div>Mapping <strong>5</strong> Azure Resources to <strong>'Oracle EBS Hub'</strong>...</div>
+          <div>Mapping <strong>5</strong> Azure Resources to <strong>'Oracle EBS Application'</strong>...</div>
         </div>`;
       chatWindow.appendChild(mappingBubble);
 
@@ -179,7 +177,7 @@ function handleConditionalEvent() {
         <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" alt="Copilot Logo" class="h-5 w-5 mt-1" />
         <div>
           <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-          <div>Registration now successfully completed. Oracle EBS Hub is ready for workload validation</div>
+          <div>Registration now successfully completed. Oracle EBS Application is ready for workload validation</div>
         </div>`;
       chatWindow.appendChild(confirmationBubble);
 
@@ -193,7 +191,6 @@ function handleConditionalEvent() {
   });
   }
 }
-  
 
 </script>
 
@@ -220,7 +217,7 @@ function handleConditionalEvent() {
     input.value = "";
 
     // Don't proceed with Copilot responses if message is "oracle ebs hub"
-    if (message.toLowerCase() === "oracle ebs hub") return;
+    if (message.toLowerCase() === "oracle ebs") return;
 
     // Step 1: Copilot response
     setTimeout(() => {
@@ -301,7 +298,7 @@ if (discoveryForm) {
       <div>
         <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
         <div><span class='text-[#0078d4] font-semibold'>cacf72a7-6dab-4eb7-891b-effb028de1a3 </span> is your tenant id.
-          <div><em class="text-gray">(You need to have admin privileges on the subscriptions in this tenant to create a hub)</em></div>
+          <div><em class="text-gray">(You need to have admin privileges on the subscriptions in this tenant to create an application)</em></div>
           <div>Press submit to proceed.</div>
           <button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage(event)">Submit</button>
         </div>
@@ -377,7 +374,7 @@ if (discoveryForm) {
             <div>
               <label class="flex items-center space-x-2">
                 <input type="checkbox" name="discovery" class="form-radio text-[#0078d4]" />
-                <span>ef2c2154-2d60-433c-a2d8-b947e184c3a7</span>
+                <span>adb6c79a-ae57-4414-a97e-f9d68f5fa3e8</span>
               </label>
             </div>
             <div>
@@ -430,7 +427,7 @@ if (discoveryForm) {
         <div>
           <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
           <div>You selected the following:
-          <br><span class='text-[#0078d4] font-semibold'>ef2c2154-2d60-433c-a2d8-b947e184c3a7
+          <br><span class='text-[#0078d4] font-semibold'>adb6c79a-ae57-4414-a97e-f9d68f5fa3e8
           <br>b45t2154-2r60-663c-a2d8-c549f6884c3a7</br></span></br>
             <br>Would you like to proceed?
             <br><button type="submit" class="mt-2 px-4 py-2 bg-[#0078d4] text-white rounded hover:bg-[#005a9e]" onclick="triggerNewMessage3(event)">Yes</button>
@@ -470,7 +467,7 @@ if (discoveryForm) {
         <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
         <div>
           <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-          <div class="mb-2">    Select the Azure resources below that should be mapped to this hub. You can ask to show more.
+          <div class="mb-2">    Select the Azure resources below that should be mapped to this application. You can ask to show more.
 <div class="overflow-x-auto mt-4">
   <table class="min-w-full text-sm text-left text-black border border-white-200 whitespace-nowrap bg-gray-100">
     <thead class="bg-gray-200">
@@ -484,8 +481,8 @@ if (discoveryForm) {
     <tbody class="bg-gray-100">
       <tr class="border-t">
   <td class="px-4 py-2"><input type="checkbox" /></td>
-  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">cluster-1-key</td>
-  <td class="px-4 py-2">SSH key</td>
+  <td class="px-4 py-2 text-[#0078d4] cursor-pointer">ssanf</td>
+  <td class="px-4 py-2">Storage Account</td>
   <td class="px-4 py-2 text-[#0078d4] cursor-pointer">msftodbaa1</td>
 </tr>
       <tr class="border-t">
@@ -577,7 +574,7 @@ if (discoveryForm) {
         <img src="https://i.postimg.cc/FRzjkHTL/Microsoft-Copilot-Logo.png" class="h-5 w-5 mt-1" />
         <div>
     <div class="text-sm font-semibold text-[#0078d4] mb-1">Copilot</div>
-    <div class="whitespace-nowrap overflow-hidden text-ellipsis">Provide a name for your hub</div>
+    <div class="whitespace-nowrap overflow-hidden text-ellipsis">Provide a name for your application</div>
           </div>
           
         </div>`;
